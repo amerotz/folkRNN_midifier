@@ -1,0 +1,24 @@
+X:51
+T:86 d_O = 0.664, q = 14
+M:6/8
+Q:1/4=164
+R:jig
+V:M clef=treble name="Melody" snm="M"
+V:H clef=bass name="Harmony" snm="H"
+V:R clef=percussion name="Rhythm" snm="R"
+V:B clef=percussion name="Beat" snm="B"
+K:Edor
+V:M
+%%MIDI program 40
+|:A|BEE FED|EFA B2d|edB AFA|BAF FED|BEE FED|EFA B2d|BdB AFA|
+BED E2:||:F|EDE BAF|AFB d2e|dBA GAB|AFE FED|B,EE DFA|BAF d2e|
+dBA BAF|EFE E2:|
+V:H
+%%MIDI program 21
+|:F,1|E,6|B,6|D,6|D,6|E,6|D,6|B,6|E,5:||:D,1|A,6|D,6|G,6|D,6|A,6|D,6|D,6|C,5:|
+V:R
+%%MIDI program 115
+|:A|AA2AAA|AA2AAA|AA2AAA|AA2AAA|AA2AAA|AA2AAA|AA2AAA|AAA2A:||:A|AA2AAA|AAAAA2|AA2AAA|AAAAA2|AA2AAA|AAAAA2|AA2AAA|AAA2A:|
+V:B
+%%MIDI program 116
+|:A,1|A,6|A,6|A,6|A,6|A,6|A,6|A,6|A,5:||:A,1|A,6|A,6|A,6|A,6|A,6|A,6|A,6|A,5:|
