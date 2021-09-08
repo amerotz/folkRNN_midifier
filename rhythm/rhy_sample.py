@@ -88,13 +88,15 @@ notes = notes.split('|')
 data = [x for x in notes if x != 'AAAAAA' and '-' not in x][:-1]
 
 # create fills for bar duration 1-5
+max_it = 1000
 fills = []
 for fill_size in range(1,6):
 
     bar_duration = 0
     tmp = ''
+    it = 0
 
-    while bar_duration != fill_size:
+    while bar_duration != fill_size and it < max_it:
 
         bar_duration = 0
         tmp = ''
@@ -108,6 +110,7 @@ for fill_size in range(1,6):
             tmp += tokens[int(note)]
             if bar_duration >= fill_size:
                 break
+        it += 1
 
     fills.append(tmp)
 
@@ -118,12 +121,14 @@ fills = '|'.join(fills)
 data_minus_one = data[:-1]
 selection = []
 
-for it in range(2):
+for _ in range(2):
 
     sel = random.choice(data_minus_one)
+    it = 0
 
-    while sel in selection and sel.startswith('-'):
+    while it < max_it and sel in selection and sel.startswith('-'):
         sel = random.choice(data_minus_one)
+        it += 1
 
     selection.append(sel)
     selection.append(data[data.index(sel)+1])
