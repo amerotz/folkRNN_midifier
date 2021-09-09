@@ -8,8 +8,10 @@ with open(filename, 'r') as file:
     lines = file.readlines()
 
 music = lines[4:]
+
 # create a single string
 music = ''.join(music)
+
 # capitalize everything
 music = music.translate(str.maketrans(s.ascii_lowercase, s.ascii_uppercase))
 
@@ -18,6 +20,7 @@ note_lens = music
 
 ###################### RHYTHM CONVERSION ##################### 
 
+# duration of each token in 8th notes
 durations = {
     0: 2,
     1: 0.5,
@@ -25,6 +28,7 @@ durations = {
     3: 1
 }
 
+# token notation
 tokens = {
     0: '(3xxx',
     1: 'x/2',
@@ -32,6 +36,7 @@ tokens = {
     3: 'x'
 }
 
+# clean string
 note_lens = re.sub('[^A-G0-9|:/(]', '', note_lens)
 note_lens = re.sub('[A-G]', 'x', note_lens)
 
@@ -85,7 +90,8 @@ key = note_value(key)
 # its degree and make it fit between 0-6
 note_degree = lambda x : (note_value(x) - key + 7)%7
 
-data = str(key) + '\n' + note_lens + '\n'
+# create the melody string in this new format
+data = str(key) + ' ' + mode + '\n' + note_lens + '\n'
 for bar in music:
     if bar == '':
         continue

@@ -34,6 +34,8 @@ for mat in matrix:
         if num != 0:
             line /= num
 
+print(matrix)
+
 couples /= couples.sum()
 
 output = 'trained'
